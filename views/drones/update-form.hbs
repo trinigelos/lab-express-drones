@@ -1,1 +1,36 @@
-<h2>Update the drone</h2>
+{{!-- views of the updating form --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+  </head>
+
+  <body>
+<div class="create-form-container">
+<h1>EDIT YOUR DRONE</h1>
+<form class="create-form-form" action="/drones/{{drone._id}}/edit" method="POST">
+  <label for="name">Name</label>
+  <input  class="input-create-form" type="text" name="name" value="{{drone.name}}" required>
+
+  <label for="propellers">Propellers</label>
+  <input  class="input-create-form" type="number" name="propellers" value="{{drone.propellers}}" required>
+
+  <label for="maxSpeed">Max Speed</label>
+  <input  class="input-create-form" type="number" name="maxSpeed" value="{{drone.maxSpeed}}" required>
+
+  <button type="submit">UPDATE </button>
+</form>
+</div>
+</body>
+
+</html>

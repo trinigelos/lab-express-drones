@@ -1,1 +1,38 @@
-<h2>Create a new drone</h2>
+{{!-- form to create a drone and seed db from user input. --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+  </head>
+
+  <body>
+
+<div class="create-form-container">
+<h1 class="h1-create-form">ADD NEW DRONE</h1>
+<form class="create-form-form" action="/drones/create" method="POST">
+  <label for="name">Name</label>
+  <input  class="input-create-form" type="text" name="name" id="name" required>
+
+  <label for="propellers">Propellers</label>
+  <input class="input-create-form" type="number" name="propellers" id="propellers" required>
+
+  <label for="maxSpeed">Max Speed (m/s)</label>
+  <input class="input-create-form" type="number" name="maxSpeed" id="maxSpeed" required>
+
+  <button type="submit">CREATE DRONE</button>
+</form>
+</div>
+
+  </body>
+
+</html>

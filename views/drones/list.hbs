@@ -1,1 +1,40 @@
-<h2>Available drones</h2>
+{{!-- view of drones (Visual part of the schema.) --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drones List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+    <div class="container-list">
+        <h1>YOUR COLLECTION</h1>
+        <ul class="drones-list">
+            {{#each drones}}
+                <li>
+                    <h2>{{this.name}}</h2>
+                    <p>Propellers: {{this.propellers}}</p>
+                    <p>Max Speed: {{this.maxSpeed}} km/h</p>
+                    <div class="btn-edit-delete">
+   <a href="/drones/{{this._id}}/edit">Edit</a>
+                    <form action="/drones/{{this._id}}/delete" method="POST">
+                        <button type="submit">DELETE</button>
+                    </form>
+                    </div>
+                 
+                </li>
+            {{else}}
+                <li>No drones found.</li>
+            {{/each}}
+        </ul>
+        <a href="/drones/create">Add a new drone</a>
+    </div>
+</body>
+</html>
